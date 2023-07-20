@@ -21,6 +21,18 @@ while True:
                 my_list.append(set(i))
             print("Все вещи = ", my_list)
             print("Вещи, которые взяли все друзья: ", *set.intersection(*my_list))
-            print("Уникальные вещи, которые есть только у одного друга: ", set.union(*my_list).difference(set.intersection(*my_list)))
+            print("Уникальные вещи, которые есть только у одного друга: ", *set.union(*my_list).difference(set.intersection(*my_list)))
+            new_dict = {}
+            for key, value in my_dict.items():
+                temp = key
+                if key!= temp:
+                    new_dict[key] = value
+            print("Новый словарь", new_dict)
+                # if value not in set.intersection(*my_list):
+                #     new_dict[key] = set.intersection(*my_list)
+
+
+
+            # print("Вещи, которые есть у всех кроме одного, имя: ", set.intersection(*my_list))
 
             quit()
