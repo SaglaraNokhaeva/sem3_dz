@@ -5,6 +5,14 @@
 my_dict = {'water': 2000, 'food': 1000, 'dishes': 300, 'first_aid_kit': 400, 'clothes': 500, 'flashlight': 300}
 max_weight = int(input("Введите максимальную грузоподъёмность в граммах: "))
 summ_weight = 0
+
+sorted_dict = {}
+sorted_keys = sorted(my_dict, key=my_dict.get, reverse=True)  # [1, 3, 2]
+
+for _ in sorted_keys:
+    sorted_dict[_] = my_dict[_]
+
+print("Отсортировали по весу: ", sorted_dict)
 print("Берём в рюкзак: ")
 for key, value in my_dict.items():
     if (summ_weight + value) <= max_weight:
